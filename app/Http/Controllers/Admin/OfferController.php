@@ -17,9 +17,9 @@ class OfferController extends Controller
      */
     public function index()
     {
-        $offers = Offer::with(['category', 'shop'])->get();
-        $categories = Category::all();
-        $shops = Shop::all();
+        $offers = Offer::with(['category', 'shop'])->orderBy('created_at', 'DESC')->paginate(10);
+        $categories = Category::orderBy('created_at', 'DESC')->paginate(10);
+        $shops = Shop::orderBy('created_at', 'DESC')->paginate(10);
         return view('admin.offers', compact('offers', 'categories', 'shops'));
     }
 

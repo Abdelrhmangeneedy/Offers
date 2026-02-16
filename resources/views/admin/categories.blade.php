@@ -63,7 +63,7 @@
                                     </div>
                                     <div style="margin-bottom: 20px;">
                                         <input type="checkbox" name="trending" id="categoryTrending" style="width: 20px; height: 20px; margin-right: 10px;">
-                                        <label for="categoryTrending" style="font-weight: normal;">من العروض المطلوبه ؟؟ </label>
+                                        <label for="categoryTrending" style="font-weight: normal;">من الفئات المطلوبه ؟؟ </label>
                                     </div>
 
                                     <div style="margin-bottom: 20px;">
@@ -89,7 +89,7 @@
             <div class="table-responsive mt-4 mb-5">
                 <table class="data-table table table-striped">
                     <thead>
-                        <tr>
+                        <tr class="table-primary">
                             <th width="80">الصورة</th>
                             <th>اسم الفئة</th>
                             <th>الوصف</th>
@@ -127,8 +127,9 @@
                                 <td>{{$item->trending ? 'Trending' : 'Not Trending'}}</td>
                                 <td>
                                     {{$item->shops->count()}} Shops /
-                                    {{$item->offers->count()}} Offers
-                                    {{$item->offers->where('status', 1)->count()}} Active Offers /
+                                    {{$item->offers->count()}} Offers ////
+                                    {{$item->offers->where('status', 0)->count()}} Active Offers /
+                                    {{$item->offers->where('status', 0)->where('trending', 1)->count()}} Active Trending Offers /
                                     {{$item->offers->where('trending', 1)->count()}} Trending Offers
 
                                 </td>

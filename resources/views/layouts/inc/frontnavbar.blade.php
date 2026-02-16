@@ -19,12 +19,10 @@
             <div class="user-actions">
                 @guest
                 @if (Route::has('login'))
-                    <button class="btn btn-primary">
-                        <a href="{{ url('/login') }}"></a>
-                        اشترك الآن</button>
+
                 @endif
                 @else
-
+                <a href="{{ url('/Dashboard') }}" class="btn btn-info m-2 py-2 px-4">لوحة التحكم</a>
                 <button class="btn btn-primary m-2 p-2">
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">

@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::orderBy('created_at', 'DESC')->paginate(10);
         return view('admin.categories', compact('categories'));
     }
 
@@ -36,7 +36,7 @@ class CategoryController extends Controller
         $category->description = $request->input('description');
         $category->status = $request->input('status') == true ? '1':'0';
         $category->trending = $request->input('trending') == true ? '1':'0';
-        
+
         $category->save();
         return redirect()->back()->with('status', "Added Successfully");
     }
@@ -65,7 +65,7 @@ class CategoryController extends Controller
         $category->description = $request->input('description');
         $category->status = $request->input('status') == true ? '1':'0';
         $category->trending = $request->input('trending') == true ? '1':'0';
-        
+
         $category->update();
         return redirect()->back()->with('status', "Updated Successfully");
     }

@@ -97,7 +97,7 @@
         <div class="table-responsive mt-4 mb-5">
             <table class="data-table table table-striped">
                 <thead>
-                    <tr>
+                    <tr class="table-primary">
                         <th width="80">الصورة</th>
                         <th>الفئة</th>
                         <th>اسم المحل</th>
@@ -132,10 +132,11 @@
                                 {{$item->offers->count()}} Offers
                             </td>
                             <td>
-                                {{$item->offers->where('status', 1)->count()}} Active Offers
+                                {{$item->offers->where('status', 0)->count()}} Active Offers
                             </td>
                             <td>
-                                {{$item->offers->where('trending', 1)->count()}} Trending Offers
+                                {{$item->offers->where('trending', 1)->count()}} Trending Offers //
+                                {{$item->offers->where('trending', 1)->where('status', 0)->count()}} Active Trending Offers
 
                             </td>
 

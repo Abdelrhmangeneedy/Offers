@@ -138,6 +138,15 @@
                             </div>
                         </div>
                         <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, #43cea2, #185a9d);">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>{{ $lmonthuser }}</h3>
+                                <p>مستخدمين الشهر الماضي</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
                             <div class="stat-icon" style="background: linear-gradient(135deg, #ff512f, #dd2476);">
                                 <i class="fas fa-user-minus"></i>
                             </div>

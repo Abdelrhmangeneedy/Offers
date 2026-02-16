@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
-{ 
+{
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $shops = Shop::with('category')->get();
-        $categories = Category::all();
+        $shops = Shop::with('category')->orderBy('created_at', 'DESC')->paginate(10);
+        $categories = Category::orderBy('created_at', 'DESC')->paginate(10);
         return view('admin.shops', compact('shops', 'categories'));
     }
 

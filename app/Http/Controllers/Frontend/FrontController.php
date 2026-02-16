@@ -30,7 +30,7 @@ class FrontController extends Controller
         }
     public function shops()
     {
-        $shops = Shop::where('status', '0')->get();
+        $shops = Shop::where('status', '0')->where('trending', '1')->get();
         return view('frontend.shop', compact('shops'));
     }
     public function viewshop($name)

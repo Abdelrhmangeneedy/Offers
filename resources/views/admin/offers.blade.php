@@ -76,6 +76,14 @@
                                     <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">الاختصار</label>
                                     <input type="text" name="slug" id="offerSlug" placeholder="أدخل الاختصارات" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;" required>
                                 </div>
+                                 <div style="margin-bottom: 20px;">
+                                    <input type="checkbox" name="status" id="shopStatus" style="width: 20px; height: 20px; margin-right: 10px;">
+                                    <label for="shopStatus" style="font-weight: normal;"> الغاء تفعيل المحل</label>
+                                </div>
+                                <div style="margin-bottom: 20px;">
+                                    <input type="checkbox" name="trending" id="shopTrending" style="width: 20px; height: 20px; margin-right: 10px;">
+                                    <label for="shopTrending" style="font-weight: normal;">من المحلات المميزة؟</label>
+                                </div>
                                 <div style="margin-bottom: 20px;">
                                     <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">رقم الهاتف</label>
                                     <input type="number" name="phone" id="offerPhone" placeholder="أدخل رقم الهاتف" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
@@ -117,10 +125,10 @@
         <div class="table-responsive mt-4 mb-5">
             <table class="data-table table table-striped">
                 <thead>
-                    <tr>
+                    <tr class="table-primary">
                         <th width="80">الصورة</th>
-                        <th>الاستد</th>
-                        <th>الحصان</th>
+                        <th>الفئه</th>
+                        <th>المتجر</th>
                         <th>اسم العرض</th>
                         <th>الاختصار</th>
                         <th>المدة</th>
@@ -197,6 +205,14 @@
                                                 <div style="margin-bottom: 20px;">
                                                     <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">الاختصار</label>
                                                     <input type="text" name="slug" value="{{ $item->slug }}" placeholder="أدخل الاختصارات" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;" required>
+                                                </div>
+                                                <div style="margin-bottom: 20px;">
+                                                    <input type="checkbox" name="status" id="shopStatus{{ $item->id }}" style="width: 20px; height: 20px; margin-right: 10px;" {{ $item->status ? 'checked' : '' }}>
+                                                    <label for="shopStatus{{ $item->id }}" style="font-weight: normal;"> الغاء تفعيل المحل</label>
+                                                </div>
+                                                <div style="margin-bottom: 20px;">
+                                                    <input type="checkbox" name="trending" id="shopTrending{{ $item->id }}" style="width: 20px; height: 20px; margin-right: 10px;" {{ $item->trending ? 'checked' : '' }}>
+                                                    <label for="shopTrending{{ $item->id }}" style="font-weight: normal;">من المحلات المميزة؟</label>
                                                 </div>
                                                 <div style="margin-bottom: 20px;">
                                                     <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">رقم الهاتف</label>

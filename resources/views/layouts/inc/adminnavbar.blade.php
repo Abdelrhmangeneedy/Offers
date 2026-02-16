@@ -15,6 +15,8 @@
                             <div style="font-weight: 500;" id="userName">المدير</div>
                             <div style="font-size: 0.9rem; color: #666;">{{ Auth::user()->name }}</div>
                         </div>
+                        <a href="{{ url('/') }}" class="btn btn-info m-2 py-2 px-4">الرئيسية</a>
+
                         <button class="btn btn-secondary" id="logoutBtn">
                             <a class="dropdown-item" style="    color: #ffff;margin: auto;padding: 5px;" href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

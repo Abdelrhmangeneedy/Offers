@@ -1,6 +1,6 @@
-@extends('layouts.app')
+<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 <title>موقع عروض اليوم</title>
-@section('content')
+
 <div class="login-page" id="loginPage">
     <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -66,4 +66,3 @@
         </div>
     </form>
 </div>
-@endsection

@@ -37,7 +37,10 @@
 					</div>
 					<div>
 						<span>السعر</span>
-						<strong style="color: var(--primary-color);">{{ $offer->offer_price }} جنيه</strong>
+						<strong style="color: var(--primary-color);">
+                            سعر العرض: {{ $offer->offer_price }} جنيه
+                            <br>سعر المنتج: {{ $offer->original_price }} جنيه
+                        </strong>
 					</div>
 				</div>
 				<div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;border-top:1px dashed #eee;padding-top:10px;gap:10px;">
