@@ -1,5 +1,28 @@
-@extends('layouts.app')
-<title>موقع عروض اليوم</title>
+
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"
+      dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>تسجيل دخول جديد إلى موقع عروض اليوم</title>
+    <link rel="icon" type="image/png" href="{{ asset ('assets/img/line-chart.png') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+</head>
 @section('content')
 <div class="login-page" id="loginPage">
     <form method="POST" action="{{ route('register') }}">
@@ -74,7 +97,7 @@
 
                 <div class="row mb-0">
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <button type="submit" style="width: 100%; background-color: #f44336; color: white; border: none; padding: 10px; font-size: 16px; cursor: pointer;">
                              <i class="fas fa-sign-in-alt"></i>
                              تسجيل الدخول
                              ____
